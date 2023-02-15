@@ -4,17 +4,12 @@ rm -rf student-submission
 git clone $1 student-submission
 echo 'Finished cloning'
 
-if [[ -f $1 ]]
+cd student-submission
+if [[ -f ListExamples.java ]]
 then
-  echo "found it with -f!"
+  echo "found ListExamples.java!"
+  else exit 1
 fi
 
-if [[ -e $1 ]]
-then
-  echo "found it with -e!"
-fi
-
-if [[ -d $1 ]]
-then
-  echo "found it with -d!"
-fi
+cat ListExamples.java > class.txt
+grep "class ListExamples {" class.txt 
