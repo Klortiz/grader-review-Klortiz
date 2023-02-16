@@ -35,6 +35,13 @@ cp ../TestListExamples.java 'TestListExamples.java'
 javac -cp $CPATH *.java
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > out.txt 2>&1
 
+if grep -Fq "OK" out.txt
+then 
+    echo "You passed!"
+    else echo "No Bueno, Try Again!"
+        exit 3
+fi
+
 
 
 
