@@ -12,7 +12,7 @@ then
 fi
 
 cat ListExamples.java > class.txt
-if grep -Fq "class ListExamples {" class.txt 
+if grep -Fq "class ListExamples" class.txt 
 then
     echo "found Class ListExamples"
     else exit 2
